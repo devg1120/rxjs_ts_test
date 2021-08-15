@@ -1,0 +1,10 @@
+# ビルド(./src/app.jsができる)
+./node_modules/.bin/tsc
+# 実行
+node ./dist/app.js
+
+# windows コマンドプロンプトの場合、以下でビルドからの実行
+.\node_modules\.bin\tsc && node .\dist\app.js
+
+# windows powershellの場合、以下でビルドからの実行
+.\node_modules\.bin\tsc ; node .\dist\app.js

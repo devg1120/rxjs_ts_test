@@ -1,0 +1,58 @@
+#~$ mkdir rxjs_ts_test
+#~$  cd rxjs_ts_test/
+#~/rxjs_ts_test$ npm init -y
+Wrote to /home/gusa1120/rxjs_ts_test/package.json:
+
+{
+  "name": "rxjs_ts_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+#~/rxjs_ts_test$ npm install --save-dev typescript
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN rxjs_ts_test@1.0.0 No description
+npm WARN rxjs_ts_test@1.0.0 No repository field.
+
++ typescript@4.3.5
+added 1 package from 1 contributor and audited 1 package in 10.303s
+found 0 vulnerabilities
+
+#~/rxjs_ts_test$ npm install --save rxjs
+[..................] / rollbackFailedOptional: verb npm-session 01df910b953ac3c
+npm WARN rxjs_ts_test@1.0.0 No description
+npm WARN rxjs_ts_test@1.0.0 No repository field.
+
++ rxjs@7.3.0
+added 2 packages from 7 contributors and audited 3 packages in 3.303s
+found 0 vulnerabilities
+
+#~/rxjs_ts_test$ npm install --save @types/node
+[..................] / rollbackFailedOptional: verb npm-session d74f2fc62cb4def
+npm WARN rxjs_ts_test@1.0.0 No description
+npm WARN rxjs_ts_test@1.0.0 No repository field.
+
++ @types/node@16.6.1
+added 1 package from 43 contributors and audited 4 packages in 1.995s
+found 0 vulnerabilities
+
+#~/rxjs_ts_test$ touch tsconfig.json
+#~/rxjs_ts_test$ mkdir src
+#~/rxjs_ts_test$ touch src/app.ts
+#~/rxjs_ts_test$ vi tsconfig.json 
+#~/rxjs_ts_test$ npm list --depth=0
+rxjs_ts_test@1.0.0 /home/gusa1120/rxjs_ts_test
+├── @types/node@16.6.1
+├── rxjs@7.3.0
+└── typescript@4.3.5
+
+#~/rxjs_ts_test$ 
