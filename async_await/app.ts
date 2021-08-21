@@ -5,8 +5,51 @@
 //“async/await” と呼ばれる、より快適に promise を利用する特別な構文があります。驚くほど簡単に理解し、使用することができます。
 
 // async関数
-// : async関数は常に promise を返します。コード中に return <非 promise> がある場合、
-//   JavaScript は自動的にその値を持つ 解決された promise にラップします。
+//async functionは呼び出されるとPromiseを返す。
+//async functionが値をreturnした場合、Promiseは戻り値をresolveする。
+//async functionが例外や何らかの値をthrowした場合はその値をrejectする。
+
+namespace exasync {
+// resolve1!!をreturnしているため、この値がresolveされる
+async function resolveSample() {
+    return 'resolve!!';
+}
+
+// resolveSampleがPromiseを返し、resolve!!がresolveされるため
+// then()が実行されコンソールにresolve!!が表示される
+resolveSample().then(value => {
+    console.log(value); // => resolve!!
+});
+
+
+// reject!!をthrowしているため、この値がrejectされる
+async function rejectSample() {
+    throw new Error('reject!!');
+}
+
+// rejectSampleがPromiseを返し、reject!!がrejectされるため
+// catch()が実行されコンソールにreject!!が表示される
+rejectSample().catch(err => {
+    console.log(err); // => reject!!
+});
+
+
+// resolveErrorはasync functionではないため、Promiseを返さない
+function resolveError() {
+    return 'resolveError!!';
+}
+
+// resolveErrorはPromiseを返さないため、エラーが発生して動かない
+// Uncaught TypeError: resolveError(...).then is not a function
+//resolveError().then(value => {
+//    console.log(value);
+//});
+
+
+}
+
+
+
 
 async function f() {
   return 1;
@@ -34,7 +77,7 @@ async function f2() {
   
 f2().then((v)=> console.log(v)); // "done!OKOKOK"
 
-
+/*
 async function f3() {
 
     try {
@@ -47,6 +90,14 @@ async function f3() {
   }
   
 f3().then((v)=> console.log(v)); // 
+*/
+
+//awaitとは
+//awaitを指定した関数のPromiseの結果が返されるまで、async function内の処理を一時停止する。
+//結果が返されたらasync function内の処理を再開する。
+
+//async function内でPromiseの結果（resolve、reject）が返されるまで待機する（処理を一時停止する）演算子のこと。
+//以下のように、関数の前にawaitを指定すると、その関数のPromiseの結果が返されるまで待機する。
 
 // async/awaitの利用例
 // async/await
