@@ -1,0 +1,3 @@
+#npx prettier --write app2.ts
+
+npx prettier --write $1
